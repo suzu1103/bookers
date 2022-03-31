@@ -1,6 +1,6 @@
 <h1>Books</h1>
 
-<%= @books.each do |book| %>
+<% @books.each do |book| %>
 
   <p>Title</p>
   <span><%= book.title %></span>
@@ -9,5 +9,6 @@
   
   <%= link_to "Show", book_path(book.id) %>
   <%= link_to "Edit", edit_book_path(book.id) %>
-  <%= link_to "Destory", book_path(book.id),method: :delete, "data-confilm" => "Are you sure?" %>
+  <%= link_to "Destory", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>
+  
 <% end %>
