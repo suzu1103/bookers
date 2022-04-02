@@ -37,21 +37,20 @@
 
 
 <form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post">
-    <div id="error_explanation">
-    　<% if @book.errors.any? %>
-
+    
+  <div id="error_explanation">
+    <% if @book.errors.any? %>
       <h2><%= @book.errors.count %>errors prohibited this book from being saved:</h2>
 
-        <ul>
+      <ul>
         <% @book.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
-        </ul>
-      <% end %>
-    </div>
-
-
-
+      </ul>
+    <% end %>
+  </div>
+  
+  
   <div class="field">
     <label for="book_title">Title</label>
     <input class="book_title" type="text" name="book[title]" id="book_title">

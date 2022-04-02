@@ -1,23 +1,22 @@
 <h1>Editing Book</h1>
 
-<form class="edit_book" id="edit_book_62204" action="/books/62204" accept-charset="UTF-8" method="post">
-    <div id="error_explanation">
-      <% if @book.errors.any? %>
-      <h2><%= @book.errors.count %>errors prohibited this book from being saved:</h2>
-
-      <ul>
-      　<% @book.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-      <% end %>
-
-    </div>
-
-  
+<form class="edit_book" id="edit_book" action="/books" accept-charset="UTF-8" method="post">
 
 
 <%= form_with model: @book do |f| %>
+
+  <div id="error_explanation">
+    <% if @book.errors.any? %>
+      <h2><%= @book.errors.count %>errors prohibited this book from being saved:</h2>
+
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
 
   <div class="field">
     <label for="book_title">Title</label>
