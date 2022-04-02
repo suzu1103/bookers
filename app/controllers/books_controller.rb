@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  protect_from_forgery
+  
   def new
     @book = Book.new
   end
@@ -8,13 +10,14 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to book_path(book.id), notice: 'Book was successfully created.'
     else
-      render :show
+      render :index
     end
-    
   end
 
   def index
     @books = Book.all
+    @book = Book.new(book_params)
+    # render :index
   end
 
   def show
