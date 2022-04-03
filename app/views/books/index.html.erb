@@ -18,13 +18,13 @@
       
 
       <td>
-        <a class="index-show"><%= link_to "Show", book_path(book.id) %></a>
+        <%= link_to "Show", book_path(book.id) %>
       </td>
       <td>
-        <a class="index-edit"><%= link_to "Edit", edit_book_path(book.id) %></a>
+        <%= link_to "Edit", edit_book_path(book.id) %>
       </td>
       <td>
-        <a class="index-destroy"><%= link_to "Destory", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %></a>
+        <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>
       </td>
     </tr>
   <% end %>

@@ -31,8 +31,8 @@
   
  </form>
  
-    <a class="edit-show"><%= link_to "Show", book_path(@book.id) %></a>
+    <%= link_to "Show", book_path(@book.id) %>
     |
-    <a class="edit-back"><%= link_to "Back", books_path %></a>
+    <%= link_to "Back", books_path %>
     
 <% end %>
